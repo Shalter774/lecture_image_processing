@@ -1,0 +1,6 @@
+git status
+ステータスの表示
+
+git commit -m "コミットメッセージ"
+
+
