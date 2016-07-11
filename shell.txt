@@ -1,6 +1,13 @@
 git status
 ステータスの表示
 
-git commit -m "コミットメッセージ"
+0,ファイルを追加or名前変更した場合
+git add (filename)  →	()は要らない
+
+1,ファイルを更新
+git commit (filename) -m "コミットメッセージ"
+
+2,ファイルをアップロード
+git push
 
 
