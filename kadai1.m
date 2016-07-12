@@ -3,12 +3,10 @@
 % 表示せよ．
 % 下記はサンプルプログラムである．
 % 課題作成にあたっては「Lenna」以外の画像を用いよ．
-% 書き換えのテスト
-% one more test
 
 clear; % 変数のオールクリア
 
-ORG=imread('Lenna.png'); % 原画像の入力
+ORG=imread('image/Parrots.jpg'); % 原画像の入力
 imagesc(ORG); axis image; % 画像の表示
 pause; % 一時停止
 
