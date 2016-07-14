@@ -23,12 +23,12 @@ sigma1 = var(C1); %分散の算出
 sigma2 = var(C2);
 sigma_w = (n1 *sigma1+n2*sigma2)/(n1+n2); %クラス内分散の算出
 sigma_B = (n1 *(myu1-myu_T)^2+n2*(myu2-myu_T)^2)/(n1+n2); %クラス間分散の算出
-if max_val<sigma_B/sigma_w
+if max_val<sigma_B/sigma_w %クラス間分散/クラス内分散を最大とするようにしきい値を定める
 max_val = sigma_B/sigma_w;
 max_thres =i;
 end;
 end;
 
-IMG = ORG > max_thres;
+IMG = ORG > max_thres; %定めたしきい値を元に画像を二値化する
 imagesc(IMG); colormap(gray); colorbar;
 pause;
