@@ -1,4 +1,4 @@
-# 課題3レポート
+# 課題5レポート
 
 標準画像「Pepper」を原画像とする．この画像は縦256画素，横256画素による正方形のディジタルカラー画像である．
 
@@ -8,41 +8,51 @@
 
 によって，原画像を読み込み，モノクロ化して表示した結果を図1に示す．
 
-![モノクロ化した原画像](https://github.com/Shalter774/lecture_image_processing/blob/master/work03_res/0_mono.png)  
+![モノクロ化した原画像](https://github.com/Shalter774/lecture_image_processing/blob/master/work04_res/0_mono.png)  
 
 図1 モノクロ化した原画像
 
-次に、図1で表示した画像を
+図1の画像を判別分析法により背景と対象物に分類する.
 
-> IMG = ORG > 64;
+まず、
 
-によって輝度値が64を超える画素を1(白),そうでない画素を0(黒)として2値化した画像を図2に示す.
+> H = imhist(ORG);
 
-![2値化画像(64)](https://github.com/Shalter774/lecture_image_processing/blob/master/work03_res/1_64.png)
+により、ヒストグラムを列ベクトルに格納する
 
-図2 輝度64をしきい値として2値化した画像
+> C1 = H(1:i);  
+> C2 = H(i+1:256);
 
-同様に、輝度が96,128,192をしきい値する場合にもそれぞれ
+により,ヒストグラムを2つのクラスに分ける.  
+出来上がった2つのクラスそれぞれに対して
 
-> IMG = ORG > 96;
+> n1 = sum(C1);  
+> n2 = sum(C2);  
+> myu1 = mean(C1);  
+> myu2 = mean(C2);  
+> sigma1 = var(C1);  
+> sigma2 = var(C2);
 
-> IMG = ORG > 128;
+により、画素数の算出、平均値の算出、分散の算出を行う。  
+これらから、
 
-> IMG = ORG > 192;
+> sigma_w = (n1 *sigma1+n2*sigma2)/(n1+n2);  
+クラス内分散
 
-として表すことが出来る。しきい値が96のものを図3,128のものを図4,192のものを図5として示す.
+> sigma_B = (n1 *(myu1-myu_T)^2+n2*(myu2-myu_T)^2)/(n1+n2);  
+クラス間分散
 
-![2値化画像(96)](https://github.com/Shalter774/lecture_image_processing/blob/master/work03_res/2_96.png)
+をそれぞれ求める.求めた分散を用い，
 
-図3 輝度96をしきい値として2値化した画像
+> if max_val<sigma_B/sigma_w 
+> max_val = sigma_B/sigma_w;
+> max_thres =i;
+> end;
 
-![2値化画像(128)](https://github.com/Shalter774/lecture_image_processing/blob/master/work03_res/3_128.png)
+により，クラス間分散/クラス内分散を最大とするようにしきい値を定める.  
+定めたしきい値を元に2値化した画像を図2に示す。
 
-図4 輝度128をしきい値として2値化した画像
+![判別分析法](https://github.com/Shalter774/lecture_image_processing/blob/master/work05_res/1.png)  
 
-![2値化画像(192)](https://github.com/Shalter774/lecture_image_processing/blob/master/work03_res/4_192.png)
-
-図5 輝度196をしきい値として2値化した画像
-
-このように、しきい値とする輝度値が高いほど2値化した後の画像には黒い画素が増えることが分かる.
+図2 判別分析法により2値化した画像
 
