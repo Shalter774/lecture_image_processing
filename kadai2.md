@@ -24,20 +24,20 @@ imagesc(ORG); axis image; % 画像の表示
 
 同様に、4階調は
 
-> IMG0 = ORG>64;
-> IMG1 = ORG>128;
-> IMG2 = ORG>192;
+> IMG0 = ORG>64;  
+> IMG1 = ORG>128;  
+> IMG2 = ORG>192;  
 > IMG = IMG0 + IMG1 + IMG2;
 
 8階調は
 
-> IMG0 = ORG>32;
-> IMG1 = ORG>64;
-> IMG2 = ORG>96;
-> IMG3 = ORG>128;
-> IMG4 = ORG>160;
-> IMG5 = ORG>192;
-> IMG6 = ORG>224;
+> IMG0 = ORG>32;  
+> IMG1 = ORG>64;  
+> IMG2 = ORG>96;  
+> IMG3 = ORG>128;  
+> IMG4 = ORG>160;  
+> IMG5 = ORG>192;  
+> IMG6 = ORG>224;  
 > IMG = IMG0 + IMG1 + IMG2 + IMG3 + IMG4 + IMG5 + IMG6;
 
 として表すことが出来る。4階調化したものを図3、8階調化したものを図4として示す。
