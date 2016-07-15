@@ -18,7 +18,8 @@
 
 > H = imhist(ORG);
 
-により、ヒストグラムを列ベクトルに格納する
+により、ヒストグラムを列ベクトルに格納する.  
+次に
 
 > C1 = H(1:i);  
 > C2 = H(i+1:256);
@@ -44,9 +45,9 @@
 
 をそれぞれ求める.求めた分散を用い，
 
-> if max_val<sigma_B/sigma_w 
-> max_val = sigma_B/sigma_w;
-> max_thres =i;
+> if max_val<sigma_B/sigma_w  
+> max_val = sigma_B/sigma_w;  
+> max_thres =i;  
 > end;
 
 により，クラス間分散/クラス内分散を最大とするようにしきい値を定める.  
@@ -55,4 +56,6 @@
 ![判別分析法](https://github.com/Shalter774/lecture_image_processing/blob/master/work05_res/1.png)  
 
 図2 判別分析法により2値化した画像
+
+背景と対象物という分け方にはなっていない画像であるため、画像のほとんどが黒くなるという結果になった。
 
