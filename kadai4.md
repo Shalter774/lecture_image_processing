@@ -21,3 +21,5 @@
 ![ヒストグラム](https://github.com/Shalter774/lecture_image_processing/blob/master/work04_res/1_hist.png)  
 
 図1 モノクロ化した原画像のヒストグラム
+
+これにより、任意のモノクロ画像の輝度値がどのように分布しているか視覚的に理解することが出来る.
