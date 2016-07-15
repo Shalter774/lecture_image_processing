@@ -5,7 +5,7 @@
 
 clear; % 変数のオールクリア
 
-ORG=imread('image\Parrots.jpg'); % 原画像の入力
+ORG=imread('image/Pepper.bmp'); % 原画像の入力
 ORG = rgb2gray(ORG); colormap(gray); colorbar;
 imagesc(ORG); axis image; % 画像の表示
 pause; % 一時停止

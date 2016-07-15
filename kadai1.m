@@ -6,7 +6,7 @@
 
 clear; % 変数のオールクリア
 
-ORG=imread('image/Parrots.bmp'); % 原画像の入力
+ORG=imread('image/Pepper.bmp'); % 原画像の入力
 imagesc(ORG); axis image; % 画像の表示
 pause; % 一時停止
 
