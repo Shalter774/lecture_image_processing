@@ -44,11 +44,11 @@ imagesc(ORG); axis image; % 画像の表示
 
 ![4階調化したモノクロ画像](https://github.com/Shalter774/lecture_image_processing/blob/master/work02_res/2.png)
 
-図2 4階調化したモノクロ画像
+図3 4階調化したモノクロ画像
 
 ![8階調化したモノクロ画像](https://github.com/Shalter774/lecture_image_processing/blob/master/work02_res/3.png)
 
-図2 8階調化したモノクロ画像
+図4 8階調化したモノクロ画像
 
 
 
