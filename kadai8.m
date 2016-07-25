@@ -12,5 +12,5 @@ IMG = ORG > 128; % 閾値128で二値化
 imagesc(IMG); colormap(gray); colorbar; % 画像の表示
 pause;
 IMG = bwlabeln(IMG);
-imagesc(IMG); colormap(jet); colorbar; % 画像の表示
+imagesc(IMG); colormap(colorcube); colorbar; % 画像の表示
 pause;
